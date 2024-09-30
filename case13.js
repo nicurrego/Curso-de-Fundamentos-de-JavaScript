@@ -18,7 +18,8 @@
 //     break;
 //     //codigo en caso de -FALSE-
 // }
-let exp = "uvas"
+const exp = prompt("Bienvenido, que esta buscando? ${exp}")
+
 switch (exp) {
   case "Naranjas":
     console.log("Las naranjas cuestan $20 por Kg.");
