@@ -1,34 +1,46 @@
-/*
-function -> Palabra clave
-suma -> nombre de la funcion
-(a, b) -> parametro(s) //no todas las funciones requieren de parametros
-{ } -> llaves // espacion en el que ubicamos el cuerpo de la funcion
-return a+b -> cuerpo de la funcion
-suma(3,5) -> llamado // se ejecuta la funcion
-(3,5) -> argumento // en esta parte se ubica el argumento que la funcion pide.
+// Capacidades que tienen las funciones al igual que otros objetos
 
-*/
+//1. Pasar funciones como argumentos -> callback
 
-function suma(a, b) {
-  return a + b
-}
-console.log(suma(3,5))
+function a () {}
+function b (a) {}
+b(a)
 
-// ejemplo de clase
+// Retornar funciones
 
-function calculateDiscountPrice(price, discountPercentage) {
-  const discount = (price * discountPercentage) / 100
-  const priceWithDiscount = price - discount
-
-  return priceWithDiscount
+function a () {
+  function b() {}
+  return b
 }
 
-const originalPrice = 2200
-const discountPercentage = 15
-const finalPrice = calculateDiscountPrice(originalPrice, discountPercentage)
+// Asignar funciones a variables -> Expresion de funcion
 
-console.log('Original Price: $' + originalPrice);
-console.log('Discount $' + discountPercentage + '%');
-console.log('Price with discount: $' + finalPrice);
+const a = function () {}
 
+// Tener propiedades y métodos 
 
+function a() {}
+  const obj = {}
+  a.call(obj)
+
+//Anidar funciones -> Nested functions
+
+function a (){
+  function b () {
+    function c (){
+    }
+    c()
+  }
+  b()
+}
+a()
+
+//¿Es posible almacenar funciones en objetos?
+
+const rocket = {
+  name: 'Falcon-10',
+  launchMessage: function launchMessage(){
+    console.log('🔥');
+  }
+}
+launchMessage()
