@@ -1,50 +1,20 @@
-// Capacidades que tienen las funciones al igual que otros objetos
+//Funciones puras e impuras
 
-//1. Pasar funciones como argumentos -> callback
+//Funciones puras son aquellas que no modifican nada y su resultado siempre sera igual
 
-function a () {}
-function b (a) {}
-b(a)
+//ejemplo de Funcion pura
 
-// Retornar funciones
-
-function a () {
-  function b() {}
-  return b
+function square(x){
+  return x * x
 }
 
-// Asignar funciones a variables -> Expresion de funcion
+//Funciones impuras son aquellas que pueden modificar o mostrar algo en el DOM
 
-const a = function () {}
+//ejemplo de Funcion impura
 
-// Tener propiedades y métodos 
+let total = 0
 
-function a() {}
-  const obj = {}
-  a.call(obj)
-
-//Anidar funciones -> Nested functions
-
-function a (){
-  function b () {
-    function c (){
-    }
-    c()
-  }
-  b()
+function sumWithSideEffect (a){//aqui se modifica el valor de una variable lo que hace que la funcion sea impura
+  total += a
+  return total
 }
-a()
-
-//¿Es posible almacenar funciones en objetos?
-
-const rocket = {
-  name: 'Falcon-10',
-  launchMessage: function launchMessage(){
-    console.log('🔥');
-  }
-}
-launchMessage()
-
-//Justo estoy intentando mandar el repositorio local al repositorio de GitHub por ser la clase 20. Pero estoy teniendo problemas porque cree un par de commits en en README.md del reopsitorio en GitHub y como no esta relacionado con mi repositorio local me veo forzado a ejecutar el comando:
-
-// git pull origin main --allow-unrelated-histories
