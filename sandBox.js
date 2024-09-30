@@ -1,20 +1,33 @@
-//Funciones puras e impuras
+// Lexical Binding
 
-//Funciones puras son aquellas que no modifican nada y su resultado siempre sera igual
-
-//ejemplo de Funcion pura
-
-function square(x){
-  return x * x
+const fictionalCharacter = {
+  name: 'Uncle Ben',
+  messageWithTraditionalFuncion: function (message){
+    console.log(`${this.name} says: ${message}`)
+  },
+  messageWithArrowFuncion: (message) => {
+    console.log(`${this.name} says: ${message}`);
+  }
 }
 
-//Funciones impuras son aquellas que pueden modificar o mostrar algo en el DOM
+fictionalCharacter.messageWithTraditionalFuncion('with great power comes great responsibility')
+fictionalCharacter.messageWithArrowFuncion('beware of green goblin')
 
-//ejemplo de Funcion impura
+// Para que el Arrowfunction pueda ejecutar correctamente el nombre toca crear un enlace directo:
 
-let total = 0
+const fictionalCharacter1 = {
+  name: 'Uncle Ben',
+  messageWithTraditionalFuncion: function (message) {
+    console.log(`${this.name} says: ${message}`);
+  },
+  messageWithArrowFuncion: function (message) {
+    const self = this; // Guardamos una referencia a this
+    const arrowFunc = (msg) => {
+      console.log(`${self.name} says: ${msg}`);
+    };
+    arrowFunc(message);
+  }
+};
 
-function sumWithSideEffect (a){//aqui se modifica el valor de una variable lo que hace que la funcion sea impura
-  total += a
-  return total
-}
+fictionalCharacter1.messageWithTraditionalFuncion('with great power comes great responsibility');
+fictionalCharacter1.messageWithArrowFuncion('beware of green goblin');
