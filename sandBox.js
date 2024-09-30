@@ -44,3 +44,7 @@ const rocket = {
   }
 }
 launchMessage()
+
+//Justo estoy intentando mandar el repositorio local al repositorio de GitHub por ser la clase 20. Pero estoy teniendo problemas porque cree un par de commits en en README.md del reopsitorio en GitHub y como no esta relacionado con mi repositorio local me veo forzado a ejecutar el comando:
+
+// git pull origin main --allow-unrelated-histories
