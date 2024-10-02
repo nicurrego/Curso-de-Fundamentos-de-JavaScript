@@ -1,13 +1,44 @@
-// PREGUNTAS A DESARROLLADORES SENIOR
-
-//- ¿Por qué alguien debería estudiar desarrollo web?
-// Porque el desarrollo web te da super poderes que permiten crear soluciones escalables de forma muy economica
+// How to create an Array?
 
 
-// - Explicame la diferencia entre backend y frontend
-// frontend trabaja con elementos visuales que van a interactuar con los usuarios.Explicame
-// backend es lo que trabaja en ingeniero con aquello que no se ve
+const fruits = Array('apple', 'banana', 'orange')
+console.log(fruits);
 
+const justOneNumber = Array(12)
+console.log(justOneNumber);
 
-// -¿Cuál es el error mas común que tienen los que recien están aprendiendo JS?
-// Creo que el error más común es mandarse de lleno a las librerias, sin antes dominar completamente javaScript
+const number = Array(1, 2, 3, 4, 5)
+console.log(number);
+
+// 2. Array literal syntax
+
+const oneNumber = [4]
+console.log(oneNumber);
+
+const emptyArray = []
+console.log(emptyArray);
+
+const sports = ['soccer', 'tennis', 'rugby']
+console.log(sports);
+
+const recipeIngredients = [
+  'Flour',
+  true,
+  2,
+  {
+    ingredient: 'Milk', quantity: '1 cup'
+  },
+  false
+]
+console.log(recipeIngredients);
+
+// Accessing array element
+
+const firtsFruit = fruits[0]
+console.log(firtsFruit);
+
+// length property
+
+const numerOfFruits = fruits.length
+console.log(numerOfFruits);
+
