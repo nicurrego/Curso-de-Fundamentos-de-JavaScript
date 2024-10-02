@@ -1,47 +1,13 @@
-/*
-CLOSURE: función que tiene acceso a variables de un ámbito externo, incluso después de que esa función haya terminado de ejecutarse.
+// PREGUNTAS A DESARROLLADORES SENIOR
 
-Ámbito léxitoÑ cada vez que se declara una función, crea su porpio ámbito léxico, y puede acceder a las variables dentro de ese ámbito y a las variables en ámbitos superiores.
-*/
+//- ¿Por qué alguien debería estudiar desarrollo web?
+// Porque el desarrollo web te da super poderes que permiten crear soluciones escalables de forma muy economica
 
-function outerFunction () {
-  let outerVariable = "I am from outer function"
 
-  function innerFunction (){
-    console.log(outerVariable);
-  }
-  return innerFunction
-}
+// - Explicame la diferencia entre backend y frontend
+// frontend trabaja con elementos visuales que van a interactuar con los usuarios.Explicame
+// backend es lo que trabaja en ingeniero con aquello que no se ve
 
-const closureExample = outerFunction()
-closureExample()
 
-function createCounter (){
-  let count = 0
-
-  return function(){
-    count++
-    console.log(count);
-  }
-}
-const counterA = createCounter()
-counterA()
-counterA()
-
-const counterB = createCounter()
-counterB()
-
-function outer(){
-  let message = "Hello, "
-
-  function inter(name) {
-    console.log(message + name);
-  }
-  return inter
-}
-
-const closureA = outer()
-const closureB = outer()
-
-closureA("Alice")
-closureB("Bob")
+// -¿Cuál es el error mas común que tienen los que recien están aprendiendo JS?
+// Creo que el error más común es mandarse de lleno a las librerias, sin antes dominar completamente javaScript
