@@ -1,9 +1,5 @@
 const userDatabase = [
   {
-    username: "Gabriela",
-    password: "g4a4"
-  },
-  {
     username: "Andres",
     password: "123",
   },
@@ -17,10 +13,6 @@ const userDatabase = [
   }
 ];
 const usersTimeline = [
-   {
-    username: "Gabriela",
-    timeline: "Te amo"
-   },
   {
     username: "Estefany",
     timeline: "Me encanta Javascript!",
@@ -61,7 +53,6 @@ function showTimeline(user) {
  const conTimeline = usersTimeline.find(e => e.username === user)  
  if (conTimeline) {
   console.log("timeline: " + conTimeline.timeline);
-  alert("timeline: " + conTimeline.timeline);
  } else {
   console.log("Usuario no tiene timeline actualmente.");
  }
@@ -71,4 +62,4 @@ const usuario = prompt("ingresa tu nombre de usuario")
 const password = prompt("ingresa tu contraseña")
 
 
-usuarioExistente(usuario, password)
+validarUsuario(usuario, password)
