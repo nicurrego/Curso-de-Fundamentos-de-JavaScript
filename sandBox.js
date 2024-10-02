@@ -93,3 +93,13 @@ const indexNumber = randomNumber.findIndex(number => number > 39) // solamente m
 console.log(randomNumber);
 console.log(indexNumber);
 
+// slice() // imagina que tienes una pared en el numero que le indicas para que no tome los elementos entre las paredes
+
+const animals = ['ant', 'bison', 'camel', 'duck', 'elephant']
+
+console.log(animals.slice(2));
+console.log(animals.slice(2,4));
+console.log(animals.slice(1,6));
+console.log(animals.slice(-2));
+console.log(animals.slice(2, -1));
+console.log(animals.slice());
