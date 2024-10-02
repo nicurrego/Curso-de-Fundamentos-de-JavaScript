@@ -1,45 +1,27 @@
-/*
+// Con esta funcion podemos construir objetos de manera mucho mas eficaz y eficiente.
 
-estructura de datos
 
-key / value
-
-objeto {
-propiedad: valor,
-propiedad: valor,
-propiedad: valor
-
-metodos()
+function Persona(nombre, apellido, edad) {
+  this.nombre = nombre;
+  this.apellido = apellido;
+  this.edad = edad;
 }
 
-*/
+const persona1 = new Persona("Juan", "Perez", 30)
 
-const persona = {
-  nombre: "Jhon",
-  edad: 30,
-  direccion: {
-    calle: "Av Insurgentre 187",
-    ciudad: "CDMX"
-  },
-  saludar(){
-    console.log(`hola, mi nombre es ${persona.nombre}`);
-  },
-}
-console.log(persona);
-persona.saludar()
+console.log(persona1);
 
+const persona2 = new Persona("Diego", "De Granada", 35)
 
-persona.teleforno = "555-555-5555";
+console.log(persona2);
 
-console.log(persona.teleforno);
+Persona.prototype.telefono = "555-555-5555";
 
-persona.despedir = () => {
-  console.log("Adios");
+persona1.nacionalidad = "Mexicano";
+
+Persona.prototype.saludar = function() {
+  console.log(`Hola, me llamo ${this.nombre} ${this.apellido}`);
 }
 
-persona.despedir();
-
-delete persona.telefono;
-delete persona.despedir;
-
-console.log(persona.telefono);
+persona1.saludar()
+persona2.saludar()
