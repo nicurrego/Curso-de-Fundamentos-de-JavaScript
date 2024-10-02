@@ -1,17 +1,47 @@
-// Explica que las variables tienen un scope chain o alcanze segun el bloque al que pertenencen.
+/*
+CLOSURE: función que tiene acceso a variables de un ámbito externo, incluso después de que esa función haya terminado de ejecutarse.
 
-const userPoints = 150 //bloque1
+Ámbito léxitoÑ cada vez que se declara una función, crea su porpio ámbito léxico, y puede acceder a las variables dentro de ese ámbito y a las variables en ámbitos superiores.
+*/
 
-function checkAccess(){//bloque2
-  if (userPoints < 100){//bloque3
-    const message = 'Acces denied: Insufficient points!'
-    return message
-  }//bloque3 
-  else {//bloque4
-    const message = 'Acces granted: Enjoy the premim features!'
-    return message
-  }//bloque4
-}//bloque2
+function outerFunction () {
+  let outerVariable = "I am from outer function"
 
-console.log(checkAccess());
-//bloque1
+  function innerFunction (){
+    console.log(outerVariable);
+  }
+  return innerFunction
+}
+
+const closureExample = outerFunction()
+closureExample()
+
+function createCounter (){
+  let count = 0
+
+  return function(){
+    count++
+    console.log(count);
+  }
+}
+const counterA = createCounter()
+counterA()
+counterA()
+
+const counterB = createCounter()
+counterB()
+
+function outer(){
+  let message = "Hello, "
+
+  function inter(name) {
+    console.log(message + name);
+  }
+  return inter
+}
+
+const closureA = outer()
+const closureB = outer()
+
+closureA("Alice")
+closureB("Bob")
