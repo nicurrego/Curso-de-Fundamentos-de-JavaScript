@@ -40,3 +40,10 @@ perro1.correr();
 perro1.emitirSonido();
 
 
+perro1.nuevoMetodo = function () {
+  console.log("Este es un metodo");
+};
+
+Perro.prototype.segundoMetodo = function () { // perro1 = instancia / Perro = Class
+  console.log("Es otro nuevo metodo");
+}
