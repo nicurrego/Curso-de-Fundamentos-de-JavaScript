@@ -48,3 +48,33 @@ console.log('Temperatures in celsius:',temperaturesinCelsius);
 const temperatures = ['32', '212', '95']
 const inCelsius = temperatures.forEach(num => console.log((5/9) * (num-32)))
 
+// filter()
+
+const numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+const numerosPares = numeros.filter(numeros => numeros % 2 === 0)
+
+console.log(numeros);
+console.log(numerosPares);
+
+// reduce() //la cosa con esto es que no trabaja como un array normal. Mas bien toca mirarlo como un objeto con sus metodos independientes
+
+const numebrsReduce = [1, 2, 3, 4, 5]
+const sum = numebrsReduce.reduce((accumulator, currentValue) => accumulator + currentValue, 0)// Vendria siendo como un metodo para simplificar un array. El acumulador seria como una variable que almacena el array resumido. el '0' al final es el formato inicial del resumen.
+console.log(numebrsReduce);
+console.log(sum);
+
+
+// reduce () case 2
+
+const words = ['apple', 'banana', 'hello', 'bye', 'banana', 'bye', 'bye',]
+
+const wordFrecuency = words.reduce((accumulator, currentValue) =>{
+  if (accumulator[currentValue]){
+    accumulator[currentValue]++
+  } else{
+    accumulator[currentValue] = 1
+  }
+  return accumulator
+},{})
+
+console.log(wordFrecuency);
