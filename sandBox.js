@@ -1,18 +1,20 @@
-// una manera de administrar las tareas para no sobrecargar la memoria es utilizando una web API
+const promise = new Promise((resolve,reject) => {
+  setTimeout(() => {
+    let operationSuccesful = true;
+    if (operationSuccesful){
+      resolve("La operacion fue exitosa!");
+    } else {
+      reject("Fallo la operacion");
+    }
+  }, 1000)
+});
 
-//la cual se encarga de realizar las tareas por separado, mandar el resultado al queue y de ahi se le permite el reingreso al Call stack una vez este tenga disponibilidad de recursos.
+promise
+.then((successMessage) => {
+  console.log(successMessage);
+})
+.catch((errorMessage) => {
+  console.log(errorMessage);
+})
 
-
-call stack      web API
-+++++++++    +++++++++++++++++++
-+       +    +                 +
-+       +    +                 +
-+       +    +     timer       +
-+       +    +                 +
-+       +    + /* function()*/ +
-+       +    +                 +
-+++++++++    +++++++++++++++++++
-
-                     queue
-   loop   <- +++++++++++++++++++++
-             +++++++++++++++++++++
+//simulacion de una promesa en donde la operacion es exitosa
