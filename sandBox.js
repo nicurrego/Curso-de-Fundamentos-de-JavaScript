@@ -18,7 +18,7 @@ const userDatabase = [
 ];
 const usersTimeline = [
    {
-    username: "Gabriela",
+    username: "caro",
     timeline: "Te amo"
    },
   {
@@ -45,11 +45,18 @@ function usuarioExistente(username, password){
       userDatabase[i].username === username &&
       userDatabase[i].password === password
     ) {
-      console.log("Es correcto");
-      break;
-    } else{
-      console.log("No es correcto");
+      return true;
     }
+  }
+  return false;
+}
+
+function singIng(username, password) {
+  if (usuarioExistente(username, password)) {
+    alert(`bienvenido a tu cuenta ${username}`)
+    console.log(usersTimeline);
+  } else {
+    alert("Uuuuuuuuuuuups, usuario o contraseña incorrectos!")
   }
 }
 
@@ -57,4 +64,4 @@ const usuario = prompt("ingresa tu nombre de usuario")
 const password = prompt("ingresa tu contraseña")
 
 
-usuarioExistente(usuario, password)
+singIng(usuario, password)
