@@ -18,3 +18,22 @@ async function fetchData(){
 
 // el async (funcion asincronica) es mas moderna y facil de entender
 //el await es lo que permite que se ejecuten los pasos una vez se culmine el anterior.
+const urls = [
+  "https://rickandmortyapi.com/api/character",
+  "https://rickandmortyapi.com/api/location",
+  "https://rickandmortyapi.com/api/episode"
+];
+
+async function fetchNewData() {
+  try {
+    for await (let url of urls){
+      let response = await fetch(url);
+      let data = await response.json();
+      console.log(data);
+    }
+    
+  } catch(error){
+    console.log(error);
+    
+  }
+}
